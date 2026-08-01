@@ -3,14 +3,8 @@ package Application.org;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+
+import jakarta.persistence.*;
 
 @Entity
 public class Booking {
@@ -38,6 +32,16 @@ public class Booking {
 	@JoinColumn(name="Station_ID")
 	private ChargingStation chargingstation;
 	
+	@OneToOne(mappedBy="Booking")
+	private ChargingSession chargingsession;
+	
+	
+	public ChargingSession getChargingsession() {
+		return chargingsession;
+	}
+	public void setChargingsession(ChargingSession chargingsession) {
+		this.chargingsession = chargingsession;
+	}
 	public Booking() {
 		
 	}

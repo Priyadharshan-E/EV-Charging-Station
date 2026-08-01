@@ -37,6 +37,12 @@ public class Vechicle {
 	public Vechicle() {
 		
 	}
+	public Vechicle( String VechicleNumber,String VechicleModel,int BatteryCapacity){
+		this.VechicleNumber = VechicleNumber;
+		this.VechicleModel = VechicleModel;
+		this.BatteryCapacity = BatteryCapacity;
+		
+	}
 	
 	public List<Vechicle> getVechicles() {
 		return Vechicles;
@@ -45,6 +51,7 @@ public class Vechicle {
 	public void setVechicles(List<Vechicle> vechicles) {
 		Vechicles = vechicles;
 	}
+	
 
 	public int getVechicleID() {
 		return VechicleID;
